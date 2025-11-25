@@ -15,8 +15,8 @@ namespace AlloyOptimisation.Tests
             var system = new AlloySystem(ni, [ cr ]);
 
             var enumerator = new GridAlloyEnumerator();
-
             enumerator.AddRange(range);
+            
             var alloys = enumerator.Enumerate(system).ToList();
 
             Assert.Equal(3, alloys.Count);
