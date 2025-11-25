@@ -27,7 +27,7 @@ namespace AlloyOptimisation.Tests
         );
 
         [Theory]
-        // Cr   Co    Nb    Mo    expected creep resistance (from Table 3)
+        // Cr   Co    Nb    Mo    expected creep resistance (from Table 3 in spec)
         [InlineData(15.0, 10.0, 1.00, 2.00, 1.226E18)]
         [InlineData(20.0, 0.0, 0.00, 1.50, 5.519E17)]
         [InlineData(22.0, 25.0, 1.50, 6.00, 2.820E18)]
@@ -50,7 +50,7 @@ namespace AlloyOptimisation.Tests
 
             var creep = calculator.Compute(composition);
 
-            // allow small rounding differences (the spec values are rounded)
+            // allow small rounding differences (i believe the spec values are rounded)
             var tolerance = expected * 1e-4; // 0.01%
 
             Assert.InRange(creep, expected - tolerance, expected + tolerance);
