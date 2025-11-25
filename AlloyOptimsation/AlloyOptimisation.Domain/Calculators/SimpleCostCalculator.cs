@@ -2,7 +2,7 @@
 
 namespace AlloyOptimisation.Domain.Calculators
 {
-    public class SimpleCostCalculator : ICostCaclulator
+    public class SimpleCostCalculator : ICostCalculator
     {
         public double Compute(AlloyComposition composition)
         {

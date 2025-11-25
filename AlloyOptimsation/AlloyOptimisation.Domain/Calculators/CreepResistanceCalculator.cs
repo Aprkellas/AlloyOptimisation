@@ -2,7 +2,7 @@
 
 namespace AlloyOptimisation.Domain.Calculators
 {
-    public class CreepResistanceCalculator : ICreeResistanceCalculator
+    public class CreepResistanceCalculator : ICreepResistanceCalculator
     {
         public double Compute(AlloyComposition composition)
         {

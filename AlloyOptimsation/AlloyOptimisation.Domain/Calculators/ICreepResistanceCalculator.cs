@@ -2,7 +2,7 @@
 
 namespace AlloyOptimisation.Domain.Calculators
 {
-    public interface ICreeResistanceCalculator
+    public interface ICreepResistanceCalculator
     {
         double Compute(AlloyComposition composition);
     }
