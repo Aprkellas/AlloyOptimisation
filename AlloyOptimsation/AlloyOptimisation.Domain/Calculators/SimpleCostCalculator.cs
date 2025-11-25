@@ -12,16 +12,20 @@ namespace AlloyOptimisation.Domain.Calculators
             }
 
             var cost = 0.0;
+            var sumPercentNonBase = 0.0;
 
             // sum costs of each element times its atomic fraction
             foreach (var (element, atomicPercent) in composition.AtomicPercents)
             {
-                double fraction = atomicPercent / 100.0;
+                sumPercentNonBase += atomicPercent;
+                var fraction = atomicPercent / 100.0;
                 cost += element.CostPerKg * fraction;
             }
 
-            var baseFraction = composition.BaseElementPercent / 100.0;
-            cost += composition.System.BaseElement.CostPerKg * baseFraction;
+            var basePercent = 100.0 - sumPercentNonBase;
+            var baseFraction = basePercent / 100.0;
+
+            cost += baseFraction * composition.System.BaseElement.CostPerKg;
 
             return cost;
         }

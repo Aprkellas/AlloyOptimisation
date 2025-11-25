@@ -6,7 +6,7 @@ namespace AlloyOptimisation.Domain.Alloy
     public class GridAlloyEnumerator : IAlloyEnumerator
     {
 
-        private readonly List<ElementRange> _ranges = new();
+        private readonly List<ElementRange> _ranges = [];
 
         public void AddRange(ElementRange range)
         {
