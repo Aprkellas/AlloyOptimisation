@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36310.24 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlloyOptimisation.Domain", "AlloyOptimisation.Domain\AlloyOptimisation.Domain.csproj", "{B605F4A0-6378-4587-B16B-5D5FF0448EC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{7CE0FD42-0D66-409D-B9BC-1FB932699B8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlloyOptimisation.Tests", "TestProject1\AlloyOptimisation.Tests.csproj", "{7CE0FD42-0D66-409D-B9BC-1FB932699B8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
