@@ -7,8 +7,10 @@ namespace AlloyOptimisation.Domain.Alloy
         public ElementDefinition BaseElement { get; }
         public IReadOnlyList<ElementDefinition> VariableElements { get; }
 
-        public AlloySystem(ElementDefinition baseElement,
-                           IReadOnlyList<ElementDefinition> variableElements)
+
+        public AlloySystem(
+            ElementDefinition baseElement,
+            IReadOnlyList<ElementDefinition> variableElements)
         {
             BaseElement = baseElement;
             VariableElements = variableElements;
