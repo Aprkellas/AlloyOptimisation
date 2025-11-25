@@ -6,12 +6,11 @@ namespace AlloyOptimisation.Domain.Alloy
     public class GridAlloyEnumerator : IAlloyEnumerator
     {
 
-        private readonly Dictionary<ElementDefinition, ElementRange> _ranges
-            = new();
+        private readonly List<ElementRange> _ranges = [];
 
         public void AddRange(ElementRange range)
         {
-            _ranges[range.Element] = range;
+            _ranges.Add(range);
         }
 
         public IEnumerable<AlloyComposition> Enumerate(AlloySystem system)
@@ -19,25 +18,39 @@ namespace AlloyOptimisation.Domain.Alloy
             if (system is null)
                 throw new ArgumentNullException(nameof(system));
 
-            foreach (var element in system.VariableElements)
-            {
-                if (!_ranges.TryGetValue(element, out var range))
-                {
-                    throw new InvalidOperationException(
-                        $"No range defined for element {element.Symbol}"
-                    );
-                }
+            if (_ranges.Count == 0)
+                yield break;
 
-                for (var val = range.Min; val <= range.Max; val += range.Step)
-                {
-                    var dict = new Dictionary<ElementDefinition, double>
-                    {
-                        [element] = val
-                    };
-
-                    yield return new AlloyComposition(system, dict);
-                }
-            }
+            var current = new Dictionary<ElementDefinition, double>();
+            foreach (var comp in EnumerateRecursive(0, current, system))
+                yield return comp;
         }
+
+        private IEnumerable<AlloyComposition> EnumerateRecursive(
+            int index,
+            Dictionary<ElementDefinition, double> current,
+            AlloySystem system)
+        {
+            if (index == _ranges.Count)
+            {
+                yield return new AlloyComposition(system, new Dictionary<ElementDefinition, double>(current));
+                yield break;
+            }
+
+            var range = _ranges[index];
+
+            for (double v = range.Min; v <= range.Max + 1e-9; v += range.Step)
+            {
+                // round to avoid floating drift
+                double value = Math.Round(v, 3);
+                current[range.Element] = value;
+
+                foreach (var comp in EnumerateRecursive(index + 1, current, system))
+                    yield return comp;
+            }
+
+            current.Remove(range.Element);
+        }
+
     }
 }
