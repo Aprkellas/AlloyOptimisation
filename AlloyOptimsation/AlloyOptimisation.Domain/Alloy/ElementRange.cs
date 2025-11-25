@@ -1,4 +1,6 @@
-﻿namespace AlloyOptimisation.Domain.Elements
+﻿using AlloyOptimisation.Domain.Elements;
+
+namespace AlloyOptimisation.Domain.Alloy
 {
     public class ElementRange
     {

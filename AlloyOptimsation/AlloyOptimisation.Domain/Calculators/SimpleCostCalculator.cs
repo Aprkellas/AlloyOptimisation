@@ -6,7 +6,7 @@ namespace AlloyOptimisation.Domain.Calculators
     {
         public double Compute(AlloyComposition composition)
         {
-            if (composition == null)
+            if (composition is null)
             {
                 throw new ArgumentNullException(nameof(composition));
             }
