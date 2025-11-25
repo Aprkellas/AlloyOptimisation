@@ -1,6 +1,7 @@
 using AlloyOptimisation.Domain.Alloy;
 using AlloyOptimisation.Domain.Calculators;
 using AlloyOptimisation.Domain.Elements;
+using AlloyOptimisation.Domain.Optimisers;
 
 namespace AlloyOptimisation.Tests
 {
