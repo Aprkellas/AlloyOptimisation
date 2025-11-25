@@ -5,9 +5,9 @@ VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlloyOptimisation.Domain", "AlloyOptimisation.Domain\AlloyOptimisation.Domain.csproj", "{B605F4A0-6378-4587-B16B-5D5FF0448EC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlloyOptimisation.Tests", "AlloyedOptimisation.Tests\AlloyOptimisation.Tests.csproj", "{06D7927B-8BFB-9197-C861-61BC637408F8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlloyOptimisation.Cli", "AlloyOptimisation.Cli\AlloyOptimisation.Cli.csproj", "{5717601B-A429-44EE-B810-BEF4E35C5B7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlloyOptimisation.Tests", "AlloyOptimisation.Tests\AlloyOptimisation.Tests.csproj", "{2D5E193B-2268-67FE-B749-EB62440FB908}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{B605F4A0-6378-4587-B16B-5D5FF0448EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B605F4A0-6378-4587-B16B-5D5FF0448EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B605F4A0-6378-4587-B16B-5D5FF0448EC1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06D7927B-8BFB-9197-C861-61BC637408F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06D7927B-8BFB-9197-C861-61BC637408F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06D7927B-8BFB-9197-C861-61BC637408F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06D7927B-8BFB-9197-C861-61BC637408F8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5717601B-A429-44EE-B810-BEF4E35C5B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5717601B-A429-44EE-B810-BEF4E35C5B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5717601B-A429-44EE-B810-BEF4E35C5B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5717601B-A429-44EE-B810-BEF4E35C5B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D5E193B-2268-67FE-B749-EB62440FB908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D5E193B-2268-67FE-B749-EB62440FB908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D5E193B-2268-67FE-B749-EB62440FB908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D5E193B-2268-67FE-B749-EB62440FB908}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
