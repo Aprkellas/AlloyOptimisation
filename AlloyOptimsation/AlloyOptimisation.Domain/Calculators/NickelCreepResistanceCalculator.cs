@@ -2,7 +2,7 @@
 
 namespace AlloyOptimisation.Domain.Calculators
 {
-    public class CreepResistanceCalculator : ICreepResistanceCalculator
+    public class NickelCreepResistanceCalculator : ICreepResistanceCalculator
     {
         public double Compute(AlloyComposition composition)
         {
@@ -19,7 +19,7 @@ namespace AlloyOptimisation.Domain.Calculators
                 creep += element.Alpha * percent;
             }
             
-            return creep;
+            return Math.Exp(creep);
         }
     }
 }

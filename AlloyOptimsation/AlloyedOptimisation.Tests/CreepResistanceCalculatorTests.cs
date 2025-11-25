@@ -24,11 +24,13 @@ namespace AlloyOptimisation.Tests
                 [co] = 5.0
             });
 
-            var calculator = new CreepResistanceCalculator();
+            var calculator = new NickelCreepResistanceCalculator();
 
             var creep = calculator.Compute(composition);
 
-            var expected = (cr.Alpha * 10.0) + (co.Alpha * 5.0);
+            var linear = (cr.Alpha * 10.0) + (co.Alpha * 5.0);
+            var expected = Math.Exp(linear);
+
             Assert.InRange(creep, expected * 0.999, expected * 1.001);
         }
     }

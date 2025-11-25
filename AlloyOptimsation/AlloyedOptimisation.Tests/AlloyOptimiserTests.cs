@@ -30,7 +30,7 @@ namespace AlloyOptimisation.Tests
 
             var optimizer = new AlloyOptimiser(
             enumerator,
-            new CreepResistanceCalculator(),
+            new NickelCreepResistanceCalculator(),
             new SimpleCostCalculator());
 
             var result = optimizer.FindBest(system, maxCostPerKg: 18.0);
