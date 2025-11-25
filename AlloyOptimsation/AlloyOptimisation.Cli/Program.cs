@@ -48,7 +48,7 @@ public class Program
 
             var choice = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
-                    .Title("Select an [green]alloy[/] from Table 3 or provide values in Table 2 (Esc to exit):")
+                    .Title("Select an [green]alloy[/] from Table 3 or calculate CR for values in Table 2 (Esc to exit):")
                     .PageSize(10)
                     .AddChoices(
                         CalculateString
