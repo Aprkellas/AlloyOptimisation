@@ -129,7 +129,7 @@ public class Program
         var grid = new Grid();
         grid.AddColumn();
         grid.AddColumn();
-        grid.AddRow("[green]Creep resistance:[/]", $"[bold]{creep:E3}[/] m^2/s");
+        grid.AddRow("[green]Creep resistance:[/]", $"[bold]{creep:E5}[/] m^2/s");
         grid.AddRow("[yellow]Cost:[/]", $"[bold]{cost:F2}[/] £/kg");
 
         var panel = new Panel(grid)
