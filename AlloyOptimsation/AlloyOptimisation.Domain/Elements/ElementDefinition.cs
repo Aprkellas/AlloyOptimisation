@@ -1,4 +1,4 @@
-﻿namespace AlloyOptimisation.Domain
+﻿namespace AlloyOptimisation.Domain.Elements
 {
     public class ElementDefinition
     {
