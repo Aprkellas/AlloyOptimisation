@@ -28,8 +28,7 @@ namespace AlloyOptimisation.Tests
 
             var creep = calculator.Compute(composition);
 
-            var linear = (cr.Alpha * 10.0) + (co.Alpha * 5.0);
-            var expected = Math.Exp(linear);
+            var expected = (cr.Alpha * 10.0) + (co.Alpha * 5.0);
 
             Assert.InRange(creep, expected * 0.999, expected * 1.001);
         }

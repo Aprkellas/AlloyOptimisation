@@ -19,7 +19,7 @@ namespace AlloyOptimisation.Domain.Calculators
                 creep += element.Alpha * percent;
             }
             
-            return Math.Exp(creep);
+            return creep;
         }
     }
 }
