@@ -6,7 +6,20 @@ namespace AlloyOptimisation.Domain.Calculators
     {
         public double Compute(AlloyComposition composition)
         {
-            throw new NotImplementedException();
+            if (composition is null)
+            {
+                throw new ArgumentNullException(nameof(composition));
+            }
+
+            // sum alpha_i * x_i for all elements in the composition
+            var creep = 0.0;
+
+            foreach (var (element, percent) in composition.AtomicPercents)
+            {
+                creep += element.Alpha * percent;
+            }
+            
+            return creep;
         }
     }
 }
