@@ -1,6 +1,7 @@
 ﻿using AlloyOptimisation.Domain.Alloy;
 using AlloyOptimisation.Domain.Calculators;
 using AlloyOptimisation.Domain.Elements;
+using Spectre.Console;
 
 // build elements from spec
 var ni = new ElementDefinition("Ni", 0.0, 8.9);
@@ -21,13 +22,45 @@ var composition = new AlloyComposition(system, new Dictionary<ElementDefinition,
 });
 
 var creepCalculator = new NickelCreepResistanceCalculator();
+var costCalculator = new SimpleCostCalculator();
 var creep = creepCalculator.Compute(composition);
+var cost = costCalculator.Compute(composition);
 
-Console.WriteLine("Nickel alloy demo (Table 3 example)");
-Console.WriteLine($"Cr: {composition.AtomicPercents[cr]} at.%");
-Console.WriteLine($"Co: {composition.AtomicPercents[co]} at.%");
-Console.WriteLine($"Nb: {composition.AtomicPercents[nb]} at.%");
-Console.WriteLine($"Mo: {composition.AtomicPercents[mo]} at.%");
-Console.WriteLine($"Ni (balance): {composition.BaseElementPercent} at.%");
-Console.WriteLine();
-Console.WriteLine($"Creep resistance: {creep:E3} m^2/s");
+// console output
+var table = new Table()
+    .Border(TableBorder.Rounded)
+    .AddColumn("Element")
+    .AddColumn("Atomic %");
+
+table.AddRow("Cr", composition.AtomicPercents[cr].ToString("0.###"));
+table.AddRow("Co", composition.AtomicPercents[co].ToString("0.###"));
+table.AddRow("Nb", composition.AtomicPercents[nb].ToString("0.###"));
+table.AddRow("Mo", composition.AtomicPercents[mo].ToString("0.###"));
+table.AddRow("[grey]Ni (balance)[/]", composition.BaseElementPercent.ToString("0.###"));
+
+AnsiConsole.Write(table);
+AnsiConsole.WriteLine();
+
+var panelContent = new Markup(
+    $"[green]Creep resistance:[/] [bold]{creep:E3}[/] m^2/s\n" +
+    $"[yellow]Cost:[/] [bold]{cost:F2}[/] £/kg"
+);
+
+var panel = new Panel(panelContent)
+{
+    Border = BoxBorder.Rounded,
+    Header = new PanelHeader("Result", Justify.Center),
+    Padding = new Padding(1, 1, 1, 1)
+};
+
+AnsiConsole.Write(panel);
+AnsiConsole.WriteLine();
+
+//Console.WriteLine("Nickel alloy demo (Table 3 example)");
+//Console.WriteLine($"Cr: {composition.AtomicPercents[cr]} at.%");
+//Console.WriteLine($"Co: {composition.AtomicPercents[co]} at.%");
+//Console.WriteLine($"Nb: {composition.AtomicPercents[nb]} at.%");
+//Console.WriteLine($"Mo: {composition.AtomicPercents[mo]} at.%");
+//Console.WriteLine($"Ni (balance): {composition.BaseElementPercent} at.%");
+//Console.WriteLine();
+//Console.WriteLine($"Creep resistance: {creep:E3} m^2/s");
