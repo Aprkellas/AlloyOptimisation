@@ -2,7 +2,7 @@ using AlloyOptimisation.Domain.Alloy;
 using AlloyOptimisation.Domain.Calculators;
 using AlloyOptimisation.Domain.Elements;
 
-namespace AlloyOptimsationTests
+namespace AlloyOptimisation.Tests
 {
     public class CreepResistanceCalculatorTests
     {
