@@ -5,7 +5,7 @@ Implements an interactive Spectre.Console interface offering selection of either
 
 <img width="1115" height="628" alt="image" src="https://github.com/user-attachments/assets/1724a60d-0152-45ac-b191-184b21e4508f" />
 
-<img width="1115" height="628" alt="image" src="https://github.com/user-attachments/assets/0d4566fc-9544-492e-9862-52523031f9e8" />
+<img width="1115" height="628" alt="image" src="https://github.com/user-attachments/assets/b54742a2-e325-4b49-a657-e8afc899fba7" />
 
 
 Domain:
